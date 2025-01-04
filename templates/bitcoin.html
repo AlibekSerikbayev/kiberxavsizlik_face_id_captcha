@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bitcoin Bashorati</title>
+</head>
+<body>
+    <h1>Bitcoin Narxi Bashorati</h1>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form action="/bitcoin-prediction" method="POST">
+        <label>Open:</label><input type="number" name="open_price" step="0.01"><br>
+        <label>High:</label><input type="number" name="high_price" step="0.01"><br>
+        <label>Low:</label><input type="number" name="low_price" step="0.01"><br>
+        <label>Volume:</label><input type="number" name="volume" step="0.01"><br>
+        <img src="{{ captcha_image }}" alt="CAPTCHA"><br>
+        <label>CAPTCHA:</label><input type="text" name="captcha"><br>
+        <button type="submit">Bashorat qilish</button>
+    </form>
+    {% if prediction %}
+    <h2>Natija: ${{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>

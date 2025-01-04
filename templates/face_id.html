@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face ID Tizimi</title>
+</head>
+<body>
+    <h1>Yuzni Tanish Tizimi</h1>
+    <img src="{{ known_image_path }}" alt="Tanish rasm"><br>
+    <form action="/face-id" method="POST" enctype="multipart/form-data">
+        <input type="file" name="video_frame" accept="image/*">
+        <button type="submit">Tekshirish</button>
+    </form>
+</body>
+</html>
